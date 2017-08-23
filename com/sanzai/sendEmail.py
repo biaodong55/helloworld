@@ -3,7 +3,7 @@ from email.utils import parseaddr, formataddr
 from email.header import Header
 
 from_addr = 'biaodong55@126.com'
-password = '158369wo'
+password = 'WO158369'
 smtp_server = 'smtp.126.com'
 
 def _format_addr(s):
