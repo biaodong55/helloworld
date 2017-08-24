@@ -1,19 +1,11 @@
 from email.mime.text import MIMEText
-from email.utils import parseaddr, formataddr
 from email.header import Header
+from com.sanzai.testDemo import _format_addr
+from com.sanzai.testOne import from_addr, smtp_server
 import smtplib
 
-from_addr = 'biaodong55@126.com'
-smtp_server = 'smtp.126.com'
 
-def _format_addr(s):
-    name, addr = parseaddr(s)
-    return formataddr((Header(name, 'utf-8').encode(), addr))
-
-
-def _sendaTextMsgToEmail(receive, msg, hint):
-
-    to_addr = receive
+def _sendaTextMsgToEmail(to_addr, msg, hint):
 
     msg = MIMEText(msg, 'plain', 'utf-8')
     msg['From'] = _format_addr(from_addr)
